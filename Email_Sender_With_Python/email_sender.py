@@ -3,12 +3,10 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
-from decouple import config
 
-# Email information from .env file
-from_address = config('FROM_ADDRESS')
-to_address = config('TO_ADDRESS')
-app_password = config('APP_PASSWORD')
+# Email information
+from_address = "FROM_ADDRESS"
+to_address = "TO_ADDRESS"
 subject = "Hi"
 body = "How are you? What's up?"
 
@@ -22,12 +20,13 @@ msg['Subject'] = subject
 msg.attach(MIMEText(body, 'plain'))
 
 # File attachment
-filename = "your_file.pdf"  # Name of the attached file
-with open(filename, "rb") as attachment:
-    part = MIMEBase('application', 'octet-stream')
-    part.set_payload(attachment.read())
-    encoders.encode_base64(part)
-    part.add_header('Content-Disposition', f"attachment; filename={filename}")
+filename = "your_file"
+attachment = open(filename, "rb")
+
+part = MIMEBase('application', 'octet-stream')
+part.set_payload((attachment).read())
+encoders.encode_base64(part)
+part.add_header('Content-Disposition', f"attachment; filename={filename}")
 
 msg.attach(part)
 
@@ -35,16 +34,16 @@ msg.attach(part)
 try:
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-
-    # Login to the account using the application password
-    server.login(from_address, app_password)
-
+    
+    server.login(from_address, "app password")
+    
     # Send the email
-    server.sendmail(from_address, to_address, msg.as_string())
+    text = msg.as_string()
+    server.sendmail(from_address, to_address, text)
     print("Email sent successfully.")
-
+    
 except Exception as e:
     print(f"Error sending email: {e}")
-
+    
 finally:
     server.quit()
