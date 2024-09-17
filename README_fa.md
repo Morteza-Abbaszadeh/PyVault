@@ -18,7 +18,7 @@
 
 ## 3. بات تلگرام برای سرچ کردن موزیک در Shazam با Telebot
 در این پروژه یک بات تلگرام ساخته شده است که از API شازم (Shazam) برای جستجوی موزیک‌ها از طریق ارسال فایل صوتی استفاده می‌کند.
-- **لینک پروژه**: [TelegramBotSearchMusic](https://github.com/Morteza-Abbaszadeh/TelegramBotSearchMusic)
+- **لینک پروژه**: [Telegram-Bot-to-Identify-Songs-using-Shazam-API](https://github.com/Morteza-Abbaszadeh/Telegram-Bot-to-Identify-Songs-using-Shazam-API)
 - **تگ‌ها**: `Python` `Telebot` `Shazam API` `Telegram Bot` `Music Search`
 
 ---
