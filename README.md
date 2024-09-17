@@ -18,7 +18,7 @@ This project provides a script for sending emails using Python and App Passwords
 
 ## 3. Telegram Bot for Music Search via Shazam with Telebot
 This project is a Telegram bot that uses the Shazam API to search for music based on audio files sent by users.
-- **Project Link**: [TelegramBotSearchMusic](https://github.com/Morteza-Abbaszadeh/TelegramBotSearchMusic)
+- **Project Link**: [Telegram-Bot-to-Identify-Songs-using-Shazam-API](https://github.com/Morteza-Abbaszadeh/Telegram-Bot-to-Identify-Songs-using-Shazam-API)
 - **Tags**: `Python` `Telebot` `Shazam API` `Telegram Bot` `Music Search`
 
 ---
